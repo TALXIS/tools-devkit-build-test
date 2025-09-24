@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net462</TargetFramework>
+        <AssemblyName>Solution1</AssemblyName>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="TALXIS.DevKit.Build.Dataverse.Tasks" Version="0.0.0.1" />
+        <!-- Add other project references like plugins, PCFs and scripts here...
+        <ProjectReference Include="..\something_else\dependency.csproj" />
+         -->
+    </ItemGroup>
+
+    <PropertyGroup>
+        <!-- Define major and minor version of the solution here -->
+        <Version>2.3.20000.0</Version>
+        <!-- Folder in the project where Dataverse solution is unpacked -->
+        <SolutionRootPath>src</SolutionRootPath>
+    </PropertyGroup>
+
+    <Target Name="BuildDataverseSolution" BeforeTargets="Build" Condition="Exists('$(ProjectDir)$(SolutionRootPath)\Other\Solution.xml')">
+        <CallTarget Targets="ValidateSolutionComponentSchema"/>
+        <CallTarget Targets="GenerateVersionNumber"/>
+    </Target>
+    <Target Name="BeforePackDataverseSolution" AfterTargets="ProcessCdsProjectReferencesOutputs" Condition="Exists('$(ProjectDir)$(SolutionRootPath)\Other\Solution.xml')">
+        <CallTarget Targets="ApplyVersionNumber"/>
+    </Target>
+</Project>
