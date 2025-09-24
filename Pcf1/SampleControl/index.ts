@@ -23,6 +23,7 @@ export class SampleControl implements ComponentFramework.StandardControl<IInputs
         container: HTMLDivElement
     ): void {
         // Add control initialization code
+        console.log("1");
     }
 
 
