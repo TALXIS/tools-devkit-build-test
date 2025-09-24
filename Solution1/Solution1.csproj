@@ -19,11 +19,9 @@
         <SolutionRootPath>src</SolutionRootPath>
     </PropertyGroup>
 
-    <Target Name="TalxisBuildDataverseSolution" BeforeTargets="ProcessCdsProjectReferencesOutputs" Condition="Exists('$(ProjectDir)$(SolutionRootPath)\Other\Solution.xml')">
+    <Target Name="TalxisAfterProcessCdsProjectReferencesOutputs" AfterTargets="ProcessCdsProjectReferencesOutputs" Condition="Exists('$(ProjectDir)$(SolutionRootPath)\Other\Solution.xml')">
         <CallTarget Targets="ValidateSolutionComponentSchema"/>
         <CallTarget Targets="GenerateVersionNumber"/>
-    </Target>
-    <Target Name="TalxisBeforePackDataverseSolution" AfterTargets="ProcessCdsProjectReferencesOutputs" Condition="Exists('$(ProjectDir)$(SolutionRootPath)\Other\Solution.xml')">
         <CallTarget Targets="ApplyVersionNumber"/>
     </Target>
 </Project>
