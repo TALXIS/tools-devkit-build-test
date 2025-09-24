@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PluginAssembly FullName="Plugin1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=61060467d2819c1d" PluginAssemblyId="5190f862-9ef6-4df8-8e63-0f5492a3cccb" CustomizationLevel="1">
+	<IsolationMode>2</IsolationMode>
+	<SourceType>0</SourceType>
+	<IntroducedVersion>1.0.0.0</IntroducedVersion>
+	<FileName>/PluginAssemblies/Plugin1.dll</FileName>
+	<PluginTypes>
+		<PluginType AssemblyQualifiedName="TALXIS.Apps.Distribution.Product.Features.PriceList.Composition.Plugins.CalculateVAT, TALXIS.Apps.Distribution.Product.Features.PriceList.Composition , Version=0.0.20000.0, Culture=neutral, PublicKeyToken=2eaab3133cb6842d" PluginTypeId="4463506e-dc79-475b-9907-190354f0ec87" Name="Calculate VAT">
+			<FriendlyName>f5a461ef-2a16-4476-8335-38240cd00ee2</FriendlyName>
+			<WorkflowActivityGroupName>TALXIS Product PriceList (0.0.20000.0)</WorkflowActivityGroupName>
+		</PluginType>
+	</PluginTypes>
+</PluginAssembly>

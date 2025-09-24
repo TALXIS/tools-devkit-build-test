@@ -10,6 +10,7 @@
         <ProjectReference Include="..\something_else\dependency.csproj" />
          -->
         <ProjectReference Include="..\Plugin1\Plugin1.csproj" />
+        <ProjectReference Include="..\Plugin2\Plugin2.csproj" />
     </ItemGroup>
 
     <PropertyGroup>
@@ -19,9 +20,26 @@
         <SolutionRootPath>src</SolutionRootPath>
     </PropertyGroup>
 
-    <Target Name="TalxisAfterProcessCdsProjectReferencesOutputs" AfterTargets="ProcessCdsProjectReferencesOutputs" Condition="Exists('$(ProjectDir)$(SolutionRootPath)\Other\Solution.xml')">
+    <PropertyGroup>
+        <BuildProjectReferences>false</BuildProjectReferences>
+    </PropertyGroup>
+
+    <Target Name="TalxisBeforeBuild" BeforeTargets="CoreBuild">
         <CallTarget Targets="ValidateSolutionComponentSchema"/>
         <CallTarget Targets="GenerateVersionNumber"/>
+    </Target>
+
+    <Target Name="BuildChildren" DependsOnTargets="TalxisBeforeBuild" BeforeTargets="CoreBuild">
+        <ItemGroup>
+            <Plugin1 Include="..\Plugin1\Plugin1.csproj" />
+            <Plugin2 Include="..\Plugin2\Plugin2.csproj" />
+        </ItemGroup>
+
+        <MSBuild Projects="@(Plugin1)" Targets="Build" Properties="Version=$(Version)" />
+        <MSBuild Projects="@(Plugin2)" Targets="Build" Properties="Version=$(Version)" />
+    </Target>
+
+    <Target Name="TalxisAfterCopyCdsSolutionContent" AfterTargets="CopyCdsSolutionContent" Condition="Exists('$(ProjectDir)$(SolutionRootPath)\Other\Solution.xml')">
         <CallTarget Targets="ApplyVersionNumber"/>
     </Target>
 </Project>
