@@ -9,6 +9,7 @@
         <!-- Add other project references like plugins, PCFs and scripts here...
         <ProjectReference Include="..\something_else\dependency.csproj" />
          -->
+        <ProjectReference Include="..\Pcf1\Pcf1.csproj" />
     </ItemGroup>
 
     <PropertyGroup>
@@ -18,11 +19,11 @@
         <SolutionRootPath>src</SolutionRootPath>
     </PropertyGroup>
 
-    <Target Name="BuildDataverseSolution" BeforeTargets="Build" Condition="Exists('$(ProjectDir)$(SolutionRootPath)\Other\Solution.xml')">
+    <Target Name="TalxisBuildDataverseSolution" BeforeTargets="ProcessCdsProjectReferencesOutputs" Condition="Exists('$(ProjectDir)$(SolutionRootPath)\Other\Solution.xml')">
         <CallTarget Targets="ValidateSolutionComponentSchema"/>
         <CallTarget Targets="GenerateVersionNumber"/>
     </Target>
-    <Target Name="BeforePackDataverseSolution" AfterTargets="ProcessCdsProjectReferencesOutputs" Condition="Exists('$(ProjectDir)$(SolutionRootPath)\Other\Solution.xml')">
+    <Target Name="TalxisBeforePackDataverseSolution" AfterTargets="ProcessCdsProjectReferencesOutputs" Condition="Exists('$(ProjectDir)$(SolutionRootPath)\Other\Solution.xml')">
         <CallTarget Targets="ApplyVersionNumber"/>
     </Target>
 </Project>
