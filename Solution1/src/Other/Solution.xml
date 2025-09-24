@@ -4,7 +4,7 @@
     <UniqueName>Solution1</UniqueName>
     <LocalizedNames>
       <!-- Localized Solution Name in language code -->
-      <LocalizedName description="Solution1" languagecode="1033" />
+      <LocalizedName description="Solution1a" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
     <Version>2.3.20000.0</Version>
