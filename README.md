@@ -1,0 +1,1 @@
+Set of samples for developing and testing [TALXIS/tools-devkit-build](https://github.com/TALXIS/tools-devkit-build/).
