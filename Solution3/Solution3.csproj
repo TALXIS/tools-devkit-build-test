@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>net462</TargetFramework>
-        <AssemblyName>Solution2</AssemblyName>
+        <AssemblyName>Solution3</AssemblyName>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.PowerApps.MSBuild.Solution" Version="1.48.2" />
@@ -10,8 +10,6 @@
         <!-- Add other project references like plugins, PCFs and scripts here...
         <ProjectReference Include="..\something_else\dependency.csproj" />
          -->
-        <ProjectReference Include="..\Plugin1\Plugin1.csproj" />
-        <ProjectReference Include="..\Plugin2\Plugin2.csproj" />
     </ItemGroup>
 
     <PropertyGroup>
@@ -20,16 +18,16 @@
         <!-- Folder in the project where Dataverse solution is unpacked -->
         <SolutionRootPath>src</SolutionRootPath>
     </PropertyGroup>
-    
-    <Target Name="PreventClean" BeforeTargets="CleanUpIntermediateFiles">
-        <Error Text="Clean target is disabled for this project." />
+
+    <Target Name="NpmInstall" BeforeTargets="Build" Condition="Exists('$(ProjectDir)\TS\package.json') AND !Exists('$(ProjectDir)\TS\node_modules')">
+        <Exec Command="npm install" WorkingDirectory="$(ProjectDir)\TS" />
     </Target>
 
-    <Target Name="TalxisBeforeProcessCdsProjectReferencesOutputs" BeforeTargets="ProcessCdsProjectReferencesOutputs" DependsOnTargets="CopyCdsSolutionContent">
-        <CallTarget Targets="ApplyPluginVersionNumberInSolution"/>
+    <Target Name="NpmBuild" BeforeTargets="Build" Condition="Exists('$(ProjectDir)\TS\package.json')">
+        <Exec Command="npm run build" WorkingDirectory="$(ProjectDir)\TS" />
     </Target>
 
-    <Target Name="TalxisAfterProcessCdsProjectReferencesOutputs" AfterTargets="ProcessCdsProjectReferencesOutputs">
+    <Target Name="TalxisAfterProcessCdsProjectReferencesOutputs" AfterTargets="ProcessCdsProjectReferencesOutputs" Condition="Exists('$(ProjectDir)$(SolutionRootPath)\Other\Solution.xml')">
         <CallTarget Targets="ValidateSolutionComponentSchema"/>
         <CallTarget Targets="GenerateVersionNumber"/>
         <CallTarget Targets="ApplyVersionNumber"/>

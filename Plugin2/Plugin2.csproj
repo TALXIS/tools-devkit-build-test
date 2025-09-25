@@ -28,7 +28,13 @@
     <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.*" PrivateAssets="All" />
     <PackageReference Include="Microsoft.PowerApps.MSBuild.Plugin" Version="1.*" PrivateAssets="All" />
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.*" PrivateAssets="All" />
+    <PackageReference Include="TALXIS.DevKit.Build.Dataverse.Tasks" Version="0.0.0.1" />
   </ItemGroup>
+
+  <Target Name="TalxisBeforeBuild" BeforeTargets="BeforeBuild">
+    <CallTarget Targets="GenerateVersionNumber"/>
+    <CallTarget Targets="ApplyPluginVersionNumber"/>
+  </Target>
 
   <Import Project="$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Plugin.targets" Condition="Exists('$(PowerAppsTargetsPath)\Microsoft.PowerApps.VisualStudio.Plugin.targets')" />
 </Project>
