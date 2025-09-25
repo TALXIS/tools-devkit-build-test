@@ -27,6 +27,7 @@
     <PackageReference Include="TALXIS.DevKit.Build.Dataverse.Tasks" Version="0.0.0.1" />
   </ItemGroup>
 
+  <!-- Override version in ControlManifest.xml -->
   <Target Name="TalxisAfterPcfBuild" AfterTargets="PcfBuild">
     <CallTarget Targets="GenerateVersionNumber"/>
     <CallTarget Targets="ApplyPcfVersionNumber"/>

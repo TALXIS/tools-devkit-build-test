@@ -20,6 +20,7 @@
         <SolutionPackageMapFilePath>src/map.xml</SolutionPackageMapFilePath>
     </PropertyGroup>
 
+    <!-- With client-side code, we just hook npm tasks into the build process -->
     <Target Name="NpmInstall" BeforeTargets="ProcessCdsProjectReferencesOutputs" Condition="Exists('$(ProjectDir)\TS\package.json') AND !Exists('$(ProjectDir)\TS\node_modules')">
         <Exec Command="npm install" WorkingDirectory="$(ProjectDir)\TS" />
     </Target>

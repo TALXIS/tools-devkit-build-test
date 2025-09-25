@@ -31,6 +31,7 @@
     <PackageReference Include="TALXIS.DevKit.Build.Dataverse.Tasks" Version="0.0.0.1" />
   </ItemGroup>
 
+  <!-- We need the build process to infer these numbers before BeforeBuild so that it generates correct header files -->
   <Target Name="TalxisBeforeBuild" BeforeTargets="BeforeBuild">
     <CallTarget Targets="GenerateVersionNumber"/>
     <CallTarget Targets="ApplyPluginVersionNumber"/>

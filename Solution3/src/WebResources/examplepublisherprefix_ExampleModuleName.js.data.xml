@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<WebResourceId>{webresourceid}</WebResourceId>
+	<WebResourceId>{b5a54e33-ff35-47d2-874f-859e4fba38a7}</WebResourceId>
 	<Name>examplepublisherprefix_ExampleModuleName.js</Name>
 	<DisplayName>ExampleModuleName JavaScript Library</DisplayName>
 	<LanguageCode>1033</LanguageCode>

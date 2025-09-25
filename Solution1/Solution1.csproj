@@ -20,6 +20,7 @@
         <SolutionRootPath>src</SolutionRootPath>
     </PropertyGroup>
 
+    <!-- Solution with PCF has standard process -->
     <Target Name="TalxisAfterProcessCdsProjectReferencesOutputs" AfterTargets="ProcessCdsProjectReferencesOutputs" Condition="Exists('$(ProjectDir)$(SolutionRootPath)\Other\Solution.xml')">
         <CallTarget Targets="ValidateSolutionComponentSchema"/>
         <CallTarget Targets="GenerateVersionNumber"/>
