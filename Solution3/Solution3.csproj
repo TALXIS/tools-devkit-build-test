@@ -17,13 +17,14 @@
         <Version>2.3.20000.0</Version>
         <!-- Folder in the project where Dataverse solution is unpacked -->
         <SolutionRootPath>src</SolutionRootPath>
+        <SolutionPackageMapFilePath>src/map.xml</SolutionPackageMapFilePath>
     </PropertyGroup>
 
-    <Target Name="NpmInstall" BeforeTargets="Build" Condition="Exists('$(ProjectDir)\TS\package.json') AND !Exists('$(ProjectDir)\TS\node_modules')">
+    <Target Name="NpmInstall" BeforeTargets="ProcessCdsProjectReferencesOutputs" Condition="Exists('$(ProjectDir)\TS\package.json') AND !Exists('$(ProjectDir)\TS\node_modules')">
         <Exec Command="npm install" WorkingDirectory="$(ProjectDir)\TS" />
     </Target>
 
-    <Target Name="NpmBuild" BeforeTargets="Build" Condition="Exists('$(ProjectDir)\TS\package.json')">
+    <Target Name="NpmBuild" BeforeTargets="ProcessCdsProjectReferencesOutputs" Condition="Exists('$(ProjectDir)\TS\package.json')">
         <Exec Command="npm run build" WorkingDirectory="$(ProjectDir)\TS" />
     </Target>
 
