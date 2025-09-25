@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SdkMessageProcessingStep Name="Generate Project Tasks" SdkMessageProcessingStepId="{8b5d7223-c454-4cdf-948a-d82df036ff77}"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SdkMessageId>9ebdbb1b-ea3e-db11-86a7-000a3a5473e8</SdkMessageId>
+  <PluginTypeName>Plugin1.GenerateProjectTasks, Plugin1, Version=0.0.20000.0, Culture=neutral, PublicKeyToken=2eaab3133cb6842d</PluginTypeName>
+  <PluginTypeId>688433d6-bd0c-462c-b450-f705be9d03c3</PluginTypeId>
+  <PrimaryEntity>talxis_project</PrimaryEntity>
+  <AsyncAutoDelete>0</AsyncAutoDelete>
+  <Description>Generate Project Tasks from Order Items</Description>
+  <FilteringAttributes></FilteringAttributes>
+  <InvocationSource>0</InvocationSource>
+  <Mode>0</Mode>
+  <Rank>1</Rank>
+  <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+  <Stage>40</Stage>
+  <IsCustomizable>1</IsCustomizable>
+  <IsHidden>0</IsHidden>
+  <SupportedDeployment>0</SupportedDeployment>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <SdkMessageProcessingStepImages />
+</SdkMessageProcessingStep>

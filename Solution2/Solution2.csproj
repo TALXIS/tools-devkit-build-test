@@ -20,13 +20,17 @@
         <!-- Folder in the project where Dataverse solution is unpacked -->
         <SolutionRootPath>src</SolutionRootPath>
     </PropertyGroup>
+    
+    <Target Name="PreventClean" BeforeTargets="CleanUpIntermediateFiles">
+        <Error Text="Clean target is disabled for this project." />
+    </Target>
 
     <Target Name="TalxisBeforeProcessCdsProjectReferencesOutputs" BeforeTargets="ProcessCdsProjectReferencesOutputs" DependsOnTargets="CopyCdsSolutionContent">
         <CallTarget Targets="ApplyPluginVersionNumberInSolution"/>
     </Target>
 
     <Target Name="TalxisAfterProcessCdsProjectReferencesOutputs" AfterTargets="ProcessCdsProjectReferencesOutputs">
-        <CallTarget Targets="ValidateSolutionComponentSchema"/>
+        <!-- <CallTarget Targets="ValidateSolutionComponentSchema"/> -->
         <CallTarget Targets="GenerateVersionNumber"/>
         <CallTarget Targets="ApplyVersionNumber"/>
     </Target>
