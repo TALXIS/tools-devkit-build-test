@@ -21,9 +21,9 @@
         <SolutionRootPath>src</SolutionRootPath>
     </PropertyGroup>
     
-    <Target Name="PreventClean" BeforeTargets="CleanUpIntermediateFiles">
+    <!-- <Target Name="PreventClean" BeforeTargets="CleanUpIntermediateFiles">
         <Error Text="Clean target is disabled for this project." />
-    </Target>
+    </Target> -->
 
     <!-- This needs to happen after CopyCdsSolutionContent and before ProcessCdsProjectReferencesOutputs, so that .dll mapping inside ProcessCdsProjectReferencesOutputs works -->
     <Target Name="TalxisBeforeProcessCdsProjectReferencesOutputs" BeforeTargets="ProcessCdsProjectReferencesOutputs" DependsOnTargets="CopyCdsSolutionContent">

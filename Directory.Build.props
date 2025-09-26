@@ -1,0 +1,6 @@
+<Project>
+   <PropertyGroup>
+      <ApplyToBranches>master:5;main:5;develop:4;pr/*:3</ApplyToBranches>
+      <LocalBranchBuildVersionNumber>0.0.12345.0</LocalBranchBuildVersionNumber>
+   </PropertyGroup>
+</Project>

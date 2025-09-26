@@ -84,7 +84,7 @@
                               <OutArgument x:TypeArguments="x:Object" x:Key="Result">[CustomActivityStep3_1_converted]</OutArgument>
                             </mxswa:ActivityReference.Arguments>
                           </mxswa:ActivityReference>
-                          <mxswa:ActivityReference AssemblyQualifiedName="Plugin1.CronToDateTime, Plugin1, Version=0.0.20000.0, Culture=neutral, PublicKeyToken=2eaab3133cb6842d" DisplayName="CustomActivityStep3: Get next run">
+                          <mxswa:ActivityReference AssemblyQualifiedName="Plugin1.CronToDateTime, Plugin1, Version=0.0.20000.0, Culture=neutral, PublicKeyToken=61060467d2819c1d" DisplayName="CustomActivityStep3: Get next run">
                             <mxswa:ActivityReference.Arguments>
                               <InArgument x:TypeArguments="x:String" x:Key="CronExpression">[DirectCast(CustomActivityStep3_1_converted, System.String)]</InArgument>
                               <OutArgument x:TypeArguments="s:DateTime" x:Key="NextRunDate">[CustomActivityStep3NextRunDate_localParameter]</OutArgument>

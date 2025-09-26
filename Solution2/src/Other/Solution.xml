@@ -89,8 +89,12 @@
       </Addresses>
     </Publisher>
     <RootComponents>
+      <!-- Plugins -->
       <RootComponent type="91" id="{5190f862-9ef6-4df8-8e63-0f5492a3cccb}" schemaName="Plugin1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=61060467d2819c1d" behavior="0" />
-      <RootComponent type="91" id="{5190f862-9ef6-4df8-8e63-0f5492a3cccc}" schemaName="Plugin2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c6d3c759c82e8fbe" behavior="0" />
+      <RootComponent type="91" id="{5190f862-9ef6-4df8-8e63-0f5492a3cccc}" schemaName="Plugin2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=61060467d2819c1d" behavior="0" />
+
+      <!-- Workflow -->
+      <RootComponent type="29" id="{76bc1b52-f4c5-4fec-8b09-681e27747ab3}" behavior="0" />
     </RootComponents>
     <MissingDependencies />
   </SolutionManifest>
