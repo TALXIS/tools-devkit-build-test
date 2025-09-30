@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net462</TargetFramework>
+        <AssemblyName>Solution1</AssemblyName>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="TALXIS.DevKit.Build.Dataverse.Solution" Version="0.0.0.1" />
+        <ProjectReference Include="..\Pcf2\Pcf2.csproj" />
+        <ProjectReference Include="..\Plugin3\Plugin3.csproj" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <!-- Define major and minor version of the solution here -->
+        <Version>2.3.20000.0</Version>
+        <!-- Folder in the project where Dataverse solution is unpacked -->
+        <SolutionRootPath>src</SolutionRootPath>
+    </PropertyGroup>
+</Project>

@@ -3,6 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net462</TargetFramework>
         <AssemblyName>Solution1</AssemblyName>
+        <PpProjectType>CdsSolution</PpProjectType>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.PowerApps.MSBuild.Solution" Version="1.48.2" />
